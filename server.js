@@ -185,3 +185,5 @@ app.listen(PORT, () => {
         console.log('\n⚠️  WARNING: No API key found. Add GEMINI_API_KEY to your .env file\n');
     }
 });
+
+module.exports = app
