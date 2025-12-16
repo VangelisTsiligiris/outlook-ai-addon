@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Email Assistant</title>
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 20px;
+            margin: 0;
+            background: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 100%;
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: #0078d4;
+            margin-top: 0;
+            font-size: 1.3em;
+        }
+        
+        .feature-section {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .feature-section:last-child {
+            border-bottom: none;
+        }
+        
+        button {
+            background: #0078d4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            margin: 5px 5px 5px 0;
+            transition: background 0.3s;
+        }
+        
+        button:hover {
+            background: #005a9e;
+        }
+        
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        
+        .result {
+            margin-top: 15px;
+            padding: 15px;
+            background: #f9f9f9;
+            border-left: 4px solid #0078d4;
+            border-radius: 4px;
+            display: none;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        
+        .result.show {
+            display: block;
+        }
+        
+        .loading {
+            text-align: center;
+            color: #666;
+            padding: 20px;
+            display: none;
+        }
+        
+        .loading.show {
+            display: block;
+        }
+        
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #0078d4;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 10px auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .error {
+            color: #d32f2f;
+            padding: 10px;
+            background: #ffebee;
+            border-radius: 4px;
+            margin-top: 10px;
+            display: none;
+        }
+        
+        .error.show {
+            display: block;
+        }
+        
+        textarea {
+            width: 100%;
+            min-height: 100px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+            resize: vertical;
+            box-sizing: border-box;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>🤖 AI Email Assistant</h2>
+        
+        <!-- Email Summary Section -->
+        <div class="feature-section">
+            <h3>📧 Email Summary</h3>
+            <button id="summarizeBtn">Summarize This Email</button>
+            <button id="extractActionsBtn">Extract Action Items</button>
+            <div id="summaryResult" class="result"></div>
+        </div>
+        
+        <!-- Email Composition Section -->
+        <div class="feature-section">
+            <h3>✍️ Compose Email</h3>
+            <label>What would you like to say?</label>
+            <textarea id="draftInput" placeholder="E.g., Thank them for the meeting and confirm we'll send the proposal by Friday"></textarea>
+            <label>Tone:</label>
+            <select id="toneSelect">
+                <option value="professional">Professional</option>
+                <option value="friendly">Friendly</option>
+                <option value="formal">Formal</option>
+                <option value="casual">Casual</option>
+            </select>
+            <button id="draftBtn">Generate Email</button>
+            <button id="improveBtn">Improve Current Draft</button>
+            <div id="draftResult" class="result"></div>
+        </div>
+        
+        <!-- Email Response Section -->
+        <div class="feature-section">
+            <h3>💬 Smart Reply</h3>
+            <button id="quickReplyBtn">Generate Quick Reply</button>
+            <div id="replyResult" class="result"></div>
+        </div>
+        
+        <div id="loading" class="loading">
+            <div class="spinner"></div>
+            <p>AI is thinking...</p>
+        </div>
+        
+        <div id="error" class="error"></div>
+    </div>
+    
+    <script src="taskpane.js"></script>
+</body>
+</html>
