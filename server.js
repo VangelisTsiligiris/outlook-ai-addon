@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 require('dotenv').config();
 
@@ -9,6 +10,22 @@ const PORT = process.env.PORT || 3001;
 // Middleware
 app.use(cors());
 app.use(express.json());
+app.use(express.static(__dirname));
+const express = require('express');
+const cors = require('cors');
+const path = require('path');  // ← ADD THIS
+const { GoogleGenerativeAI } = require('@google/generative-ai');
+require('dotenv').config();
+
+const app = express();
+const PORT = process.env.PORT || 3001;
+
+// Middleware
+app.use(cors());
+app.use(express.json());
+
+// Serve static files (HTML, JS, XML, etc.)  ← ADD THIS
+app.use(express.static(__dirname));         // ← ADD THIS
 
 // Google Gemini API configuration
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
