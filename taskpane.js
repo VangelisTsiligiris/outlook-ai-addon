@@ -1,5 +1,5 @@
 // API endpoint - change this to your deployed backend URL
-const API_BASE_URL = 'https://outlook-ai-addon.vercel.app/api';
+const API_BASE_URL = 'https://outlook-ai-addon.onrender.com/api';
 
 let currentMailItem = null;
 

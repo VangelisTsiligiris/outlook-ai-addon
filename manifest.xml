@@ -11,12 +11,12 @@
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="AI Email Assistant"/>
   <Description DefaultValue="Streamline your emails with AI-powered assistance"/>
-  <IconUrl DefaultValue="https://outlook-ai-addon.vercel.app/assets/icon-64.png"/>
-  <HighResolutionIconUrl DefaultValue="https://outlook-ai-addon.vercel.app/assets/icon-128.png"/>
+  <IconUrl DefaultValue="https://outlook-ai-frontend.onrender.com/assets/icon-64.png"/>
+  <HighResolutionIconUrl DefaultValue="https://outlook-ai-frontend.onrender.com/assets/icon-128.png"/>
   <SupportUrl DefaultValue="https://www.contoso.com/support"/>
   
   <AppDomains>
-    <AppDomain>https://outlook-ai-addon.vercel.app/</AppDomain>
+    <AppDomain>https://outlook-ai-frontend.onrender.com/</AppDomain>
   </AppDomains>
   
   <Hosts>
@@ -32,7 +32,7 @@
   <FormSettings>
     <Form xsi:type="ItemRead">
       <DesktopSettings>
-        <SourceLocation DefaultValue="https://outlook-ai-addon.vercel.app/taskpane.html"/>
+        <SourceLocation DefaultValue="https://outlook-ai-frontend.onrender.com/taskpane.html"/>
         <RequestedHeight>250</RequestedHeight>
       </DesktopSettings>
     </Form>
@@ -108,13 +108,13 @@
     
     <Resources>
       <bt:Images>
-        <bt:Image id="Icon.16x16" DefaultValue="https://outlook-ai-addon.vercel.app/assets/icon-16.png"/>
-        <bt:Image id="Icon.32x32" DefaultValue="https://outlook-ai-addon.vercel.app/assets/icon-32.png"/>
-        <bt:Image id="Icon.80x80" DefaultValue="https://outlook-ai-addon.vercel.app/assets/icon-80.png"/>
+        <bt:Image id="Icon.16x16" DefaultValue="https://outlook-ai-frontend.onrender.com/assets/icon-16.png"/>
+        <bt:Image id="Icon.32x32" DefaultValue="https://outlook-ai-frontend.onrender.com/assets/icon-32.png"/>
+        <bt:Image id="Icon.80x80" DefaultValue="https://outlook-ai-frontend.onrender.com/assets/icon-80.png"/>
       </bt:Images>
       <bt:Urls>
-        <bt:Url id="Commands.Url" DefaultValue="https://outlook-ai-addon.vercel.app/commands.html"/>
-        <bt:Url id="Taskpane.Url" DefaultValue="https://outlook-ai-addon.vercel.app/taskpane.html"/>
+        <bt:Url id="Commands.Url" DefaultValue="https://outlook-ai-frontend.onrender.com/commands.html"/>
+        <bt:Url id="Taskpane.Url" DefaultValue="https://outlook-ai-frontend.onrender.com/taskpane.html"/>
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="GroupLabel" DefaultValue="AI Assistant"/>
